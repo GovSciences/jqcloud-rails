@@ -1,6 +1,5 @@
 module JQCloud
   module Rails
-    VERSION = "1.0.4"
-    JQCLOUD_VERSION = "1.0.4"
+    VERSION = '2.0.1'
   end
 end

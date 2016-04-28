@@ -1,22 +1,24 @@
-# -*- encoding: utf-8 -*-
-require File.expand_path('../lib/jqcloud/rails/version', __FILE__)
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'jqcloud/rails/version'
 
-Gem::Specification.new do |s|
-  s.name        = "jqcloud-rails"
-  s.version     = JQCloud::Rails::VERSION
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Archit Baweja"]
-  s.email       = ["architbaweja@gmail.com"]
-  s.homepage    = "http://rubygems.org/gems/jqcloud-rails"
-  s.summary     = "jQCloud for Rails Asset pipeline"
-  s.description = "Provides easy installation and usage of jQCloud javascript library for your Rails 3.1+ application."
+Gem::Specification.new do |spec|
+  spec.name        = "jqcloud-rails"
+  spec.version     = JQCloud::Rails::VERSION
+  spec.authors     = ["Archit Baweja"]
+  spec.email       = ["architbaweja@gmail.com"]
+  spec.homepage    = "http://rubygems.org/gems/jqcloud-rails"
+  spec.summary     = "jQCloud for Rails Asset pipeline"
+  spec.description = "Provides easy installation and usage of jQCloud javascript library for your Rails 3.1+ application."
 
-  s.required_rubygems_version = ">= 1.3.6"
+  spec.required_rubygems_version = ">= 1.3.6"
 
-  s.add_dependency "jquery-rails"
-  s.add_development_dependency "rails",   "~> 3.1"
+  spec.add_dependency "jquery-rails"
+  spec.add_development_dependency "rails",   "~> 3.1"
 
-  s.files        = `git ls-files`.split("\n")
-  s.executables  = `git ls-files`.split("\n").select{|f| f =~ /^bin/}
-  s.require_path = 'lib'
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 end

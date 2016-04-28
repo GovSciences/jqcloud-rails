@@ -1,3 +1,7 @@
+require 'jqcloud/rails/version'
+
 module JQCloud
-  require 'jqcloud/rails'
+  module Rails
+    require 'jqcloud/rails/engine' if defined?(Rails)
+  end
 end
